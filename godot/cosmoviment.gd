@@ -5,6 +5,7 @@ var velocitat = Vector2.DOWN * velocitat_base
 var gravetat = Vector2.DOWN * 980
 var salt = Vector2.UP * 500
 var doble_salt = 2
+var positio = KinematicBody.(35,0)
 
 
 
@@ -41,7 +42,7 @@ func anima(velocitat: Vector2):
 		animacio.flip_h = true
 		animacio.play("camina")
 		
-	if velocitat.y < -1:
+	if velocitat.y < 0:
 		animacio.play("salta")
 		
 	if abs(velocitat.x) < 0.1:
@@ -51,3 +52,11 @@ func anima(velocitat: Vector2):
 
 func _on_Area2D_body_entered(body):
 	get_tree().change_scene("res://godot/escena1.tscn")
+	
+	
+
+
+
+func _on_Area2D2_area_shape_exited(body):
+	if position.y < -500:
+		positio

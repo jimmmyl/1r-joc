@@ -7,14 +7,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "camina",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "salta",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "camina",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ) ],
@@ -34,6 +34,8 @@ position = Vector2( -9.53674e-07, -1.90735e-06 )
 scale = Vector2( 0.0526174, 0.0535872 )
 frames = SubResource( 1 )
 animation = "camina"
+frame = 1
+speed_scale = 2.0
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
