@@ -12,7 +12,7 @@ extents = Vector2( 126, 71.5 )
 
 [node name="SenseTítol" type="Sprite" parent="."]
 position = Vector2( 472, 236 )
-scale = Vector2( 0.653646, 0.734592 )
+scale = Vector2( 0.667, 0.735 )
 texture = ExtResource( 1 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
@@ -24,6 +24,9 @@ script = ExtResource( 4 )
 position = Vector2( 513, 590 )
 scale = Vector2( 57, 1 )
 
+[node name="Sprite" type="Sprite" parent="terra"]
+position = Vector2( -0.25, 0 )
+
 [node name="terra3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 296, 426 )
 scale = Vector2( 2, 1 )
@@ -33,5 +36,19 @@ scale = Vector2( 2, 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 514, 221.5 )
 shape = SubResource( 1 )
+
+[node name="terra2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 510, -29 )
+scale = Vector2( 57, 1 )
+
+[node name="terra4" parent="." instance=ExtResource( 3 )]
+position = Vector2( -5, 282 )
+rotation = 1.5708
+scale = Vector2( 35, 1 )
+
+[node name="terra5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1029, 279 )
+rotation = 1.5708
+scale = Vector2( 35, 1 )
 
 [connection signal="body_entered" from="Area2D" to="KinematicBody2D" method="_on_Area2D_body_entered"]

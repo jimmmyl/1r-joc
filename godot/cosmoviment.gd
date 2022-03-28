@@ -5,7 +5,7 @@ var velocitat = Vector2.DOWN * velocitat_base
 var gravetat = Vector2.DOWN * 980
 var salt = Vector2.UP * 500
 var doble_salt = 2
-var positio = KinematicBody.(35,0)
+var positio = Vector2(10,0)
 
 
 
@@ -57,6 +57,8 @@ func _on_Area2D_body_entered(body):
 
 
 
-func _on_Area2D2_area_shape_exited(body):
-	if position.y < -500:
-		positio
+
+
+
+func _on_Area2D2_body_exited(body):
+	position = positio
