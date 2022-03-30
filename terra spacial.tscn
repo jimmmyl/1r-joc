@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://godot/planetHalf.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 26, 11.5 )
+
+[node name="terra spacial" type="Node2D"]
+position = Vector2( -16, 10 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -0.75, 0.5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+position = Vector2( -0.75, 9.25001 )
+scale = Vector2( 0.410156, 0.316406 )
+texture = ExtResource( 1 )
