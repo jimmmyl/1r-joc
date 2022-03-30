@@ -37,3 +37,4 @@ func _on_personatge_area_entered(area):
 func _on_personatge_area_exited(area):
 	modulate = Color(1,1,1)	
 	rotation_degrees = 0
+
