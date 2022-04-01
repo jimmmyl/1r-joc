@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://1625062331495_milky_way_2695569_1920_6178.jpg" type="Texture" id=1]
 [ext_resource path="res://godot/cosmoviment.tscn" type="PackedScene" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://godot/laserBeige_burst.png" type="Texture" id=6]
 [ext_resource path="res://alien-ufo-pack/PNG/laserGreen_burst.png" type="Texture" id=7]
 [ext_resource path="res://godot/laserBlue_burst.png" type="Texture" id=8]
+[ext_resource path="res://godot/nave automata.gd" type="Script" id=9]
+[ext_resource path="res://godot/terra auto.tscn" type="PackedScene" id=10]
+[ext_resource path="res://alien-ufo-pack/PNG/laserBlue_burst.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 547, 415.5 )
@@ -18,6 +21,17 @@ radius = 39.5601
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 33.0606
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -66,6 +80,7 @@ shape = SubResource( 4 )
 position = Vector2( 349.488, 67.2564 )
 scale = Vector2( 0.686047, 0.641026 )
 frames = SubResource( 3 )
+frame = 3
 playing = true
 
 [node name="Area2D4" type="Area2D" parent="."]
@@ -80,7 +95,7 @@ shape = SubResource( 4 )
 position = Vector2( -1, 4 )
 scale = Vector2( 0.686047, 0.641026 )
 frames = SubResource( 3 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="terra spacial3" parent="." instance=ExtResource( 3 )]
@@ -110,11 +125,31 @@ position = Vector2( 323, 247 )
 [node name="terra spacial11" parent="." instance=ExtResource( 3 )]
 position = Vector2( 448, 308 )
 
+[node name="terra auto" parent="." instance=ExtResource( 10 )]
+position = Vector2( 611, 147 )
+script = ExtResource( 9 )
+
 [node name="terra spacial12" parent="." instance=ExtResource( 3 )]
-position = Vector2( 804, 180 )
+position = Vector2( 559, 145 )
 
 [node name="terra spacial13" parent="." instance=ExtResource( 3 )]
-position = Vector2( 614, 144 )
+position = Vector2( 980, 150 )
+scale = Vector2( 2.37, 1 )
+
+[node name="Area2D53" type="Area2D" parent="."]
+position = Vector2( 963, 128 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D53"]
+position = Vector2( 36, -24 )
+shape = SubResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D53"]
+position = Vector2( 36.5, -20 )
+scale = Vector2( 0.484043, 0.468085 )
+frames = SubResource( 6 )
+frame = 1
+playing = true
 
 [connection signal="body_exited" from="Area2D2" to="KinematicBody2D" method="_on_Area2D2_body_exited"]
 [connection signal="body_entered" from="Area2D3" to="KinematicBody2D" method="_on_Area2D3_body_entered"]
+[connection signal="body_entered" from="Area2D53" to="KinematicBody2D" method="_on_Area2D53_body_entered"]

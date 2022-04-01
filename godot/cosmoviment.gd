@@ -11,6 +11,7 @@ var positio2 = Vector2(535,-350)
 
 
 func _physics_process(delta):
+	
 	velocitat.x = 0
 	if Input.is_action_pressed("mou dreta"):
 		velocitat += Vector2.RIGHT * velocitat_base
@@ -70,4 +71,8 @@ func _on_Area2D2_body_exited(body):
 
 
 func _on_Area2D3_body_entered(body):
-	position = Vector2(535,-350)
+	position = Vector2(535,350)
+
+
+func _on_Area2D53_body_entered(body):
+	get_tree().change_scene("res://godot/Node2D.tscn")
