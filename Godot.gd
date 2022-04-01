@@ -8,7 +8,7 @@ var direccio = Vector2(0,0)
 func _ready():
 	pass # Replace with function body.
 	rotation_degrees = 0
-	position = Vector2(100,300)
+	position = Vector2(90,150)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
