@@ -132,19 +132,13 @@ script = ExtResource( 9 )
 [node name="terra spacial12" parent="." instance=ExtResource( 3 )]
 position = Vector2( 559, 145 )
 
-[node name="terra spacial13" parent="." instance=ExtResource( 3 )]
-position = Vector2( 980, 150 )
-scale = Vector2( 2.37, 1 )
-
 [node name="Area2D53" type="Area2D" parent="."]
-position = Vector2( 963, 128 )
+position = Vector2( 891, 142 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D53"]
-position = Vector2( 36, -24 )
 shape = SubResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D53"]
-position = Vector2( 36.5, -20 )
 scale = Vector2( 0.484043, 0.468085 )
 frames = SubResource( 6 )
 frame = 1
