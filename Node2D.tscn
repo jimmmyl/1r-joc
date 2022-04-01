@@ -1,39 +1,38 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://alien-ufo-pack/PNG/shipBlue_manned.png" type="Texture" id=1]
 [ext_resource path="res://Godot.gd" type="Script" id=2]
 [ext_resource path="res://1625062331495_milky_way_2695569_1920_6178.jpg" type="Texture" id=3]
+[ext_resource path="res://dirtCaveRockLarge.png" type="Texture" id=4]
+[ext_resource path="res://godot/mtee2.gd" type="Script" id=5]
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 547, 415.5 )
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 711.5, 307.5 )
 
 [sub_resource type="CircleShape2D" id=5]
 radius = 32.0156
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 14, 122.5 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 19.75, 159 )
+[sub_resource type="CircleShape2D" id=6]
+radius = 11.0
 
 [node name="Node2D" type="Node2D"]
 __meta__ = {
 "_edit_horizontal_guides_": [ -232.0 ]
 }
 
-[node name="Area2D3" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2( 476, 332.5 )
-shape = SubResource( 4 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 701.5, 297.5 )
+shape = SubResource( 7 )
 
 [node name="1625062331495MilkyWay269556919206178" type="Sprite" parent="."]
 position = Vector2( 476.5, 338 )
 scale = Vector2( 1.2474, 1.38832 )
 texture = ExtResource( 3 )
 
-[node name="personatge" type="Area2D" parent="." groups=["Area dreta", "Area esquerra"]]
-position = Vector2( 2, 1 )
+[node name="personatge" type="Area2D" parent="."]
+position = Vector2( 121, -73 )
 script = ExtResource( 2 )
 
 [node name="Godot" type="Sprite" parent="personatge"]
@@ -44,23 +43,19 @@ texture = ExtResource( 1 )
 shape = SubResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="personatge"]
-current = true
 zoom = Vector2( 0.7, 0.7 )
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
 
-[node name="Area2D" type="Area2D" parent="." groups=["Area dreta"]]
-position = Vector2( 125, 40 )
+[node name="Area2D3" type="Area2D" parent="."]
+position = Vector2( 103, 7 )
+scale = Vector2( 3, 3 )
+script = ExtResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 681, 250 )
-shape = SubResource( 2 )
+[node name="Sprite" type="Sprite" parent="Area2D3"]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
 
-[node name="Area2D2" type="Area2D" parent="." groups=["Area esquerra"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+shape = SubResource( 6 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2( 263, 266 )
-shape = SubResource( 3 )
-
-[connection signal="area_entered" from="personatge" to="personatge" method="_on_personatge_area_entered"]
-[connection signal="area_exited" from="personatge" to="personatge" method="_on_personatge_area_exited"]
+[connection signal="body_exited" from="Area2D" to="personatge" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Area2D3" to="personatge" method="_on_Area2D3_body_entered"]

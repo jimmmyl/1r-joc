@@ -29,15 +29,14 @@ func _process(delta):
 		direccio+= Vector2(0,1)
 	position += direccio * velocitat * delta
 	
-	
-func _on_personatge_area_entered(area):
-	
-	if area.is_in_group("Area esquerra"):
-		modulate = Color(1,0,0)
-	if area.is_in_group("Area dreta"):
-		modulate = Color(0,1,0)
-	rotation_degrees = 45
-func _on_personatge_area_exited(area):
-	modulate = Color(1,1,1)	
-	rotation_degrees = 0
 
+
+
+
+
+func _on_Area2D3_body_entered(body):
+	position = Vector2(40,40)
+
+
+func _on_Area2D_body_exited(body):
+	position = Vector2(40,40)

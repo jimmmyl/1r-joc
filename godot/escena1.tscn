@@ -80,7 +80,7 @@ shape = SubResource( 4 )
 position = Vector2( 349.488, 67.2564 )
 scale = Vector2( 0.686047, 0.641026 )
 frames = SubResource( 3 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Area2D4" type="Area2D" parent="."]
@@ -95,7 +95,7 @@ shape = SubResource( 4 )
 position = Vector2( -1, 4 )
 scale = Vector2( 0.686047, 0.641026 )
 frames = SubResource( 3 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="terra spacial3" parent="." instance=ExtResource( 3 )]
@@ -141,7 +141,7 @@ shape = SubResource( 5 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D53"]
 scale = Vector2( 0.484043, 0.468085 )
 frames = SubResource( 6 )
-frame = 1
+frame = 3
 playing = true
 
 [connection signal="body_exited" from="Area2D2" to="KinematicBody2D" method="_on_Area2D2_body_exited"]
