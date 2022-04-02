@@ -65,4 +65,4 @@ func _on_Area2D3_body_entered(body):
 
 
 func _on_Area2D53_body_entered(body):
-	get_tree().change_scene("res://godot/escena2.tscn")
+	get_tree().change_scene("res://princ2.tscn")

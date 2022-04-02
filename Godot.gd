@@ -16,7 +16,7 @@ func _ready():
 #func _process(delta):
 #	pass
 func _process(delta):
-	
+	print (position)
 	if Input.is_action_pressed("mou dreta"):
 		direccio+= Vector2(1,0)
 		rotation_degrees = 25
@@ -29,14 +29,3 @@ func _process(delta):
 		direccio+= Vector2(0,1)
 	position += direccio * velocitat * delta
 	
-
-
-
-
-
-func _on_Area2D3_body_entered(body):
-	position = Vector2(40,40)
-
-
-func _on_Area2D_body_exited(body):
-	position = Vector2(40,40)

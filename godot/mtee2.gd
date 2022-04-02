@@ -13,12 +13,10 @@ func _ready():
 	
 func _process(delta):
 	position += velocitat * delta
-	print (position)
-	if position.x >= 1024 or position.x <= 0:
+	rotation_degrees += -5
+	if position.x >= 2300 or position.x <= -100:
 		velocitat.x = -velocitat.x
 		
-	if position.y >= 600 or position.y <= 0:
+	if position.y >= 750 or position.y <= -350:
 		velocitat.y = -velocitat.y
-	
-	
 	
