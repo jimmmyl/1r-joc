@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Godot.gd" type="Script" id=1]
+[ext_resource path="res://alien-ufo-pack/PNG/shipBlue_manned.png" type="Texture" id=2]
+[ext_resource path="res://1625062331495_milky_way_2695569_1920_6178.jpg" type="Texture" id=3]
+[ext_resource path="res://terra spacial.tscn" type="PackedScene" id=4]
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 32.0156
+
+[node name="Node2D" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ -232.0 ]
+}
+
+[node name="1625062331495MilkyWay269556919206178" type="Sprite" parent="."]
+position = Vector2( 576, 340 )
+scale = Vector2( 1.28542, 1.38832 )
+texture = ExtResource( 3 )
+
+[node name="personatge" type="Area2D" parent="."]
+position = Vector2( 3, 0 )
+script = ExtResource( 1 )
+
+[node name="Godot" type="Sprite" parent="personatge"]
+scale = Vector2( 0.5, 0.45 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="personatge"]
+shape = SubResource( 5 )
+
+[node name="Camera2D" type="Camera2D" parent="personatge"]
+current = true
+zoom = Vector2( 0.7, 0.7 )
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+
+[node name="terra spacial2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 535, 574 )
+
+[node name="terra spacial3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 535, 574 )
+
+[node name="terra spacial4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 535, 574 )
+
+[node name="terra spacial5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1498, 416 )
+rotation = 1.5708
+scale = Vector2( 20, 1 )
